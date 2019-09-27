@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="Ryan's RPG" Height="768" Width="1024">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="225"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width ="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
     </Grid>
 </Window>
