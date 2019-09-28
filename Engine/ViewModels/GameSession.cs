@@ -9,6 +9,7 @@ namespace Engine.ViewModels
 {
     public class GameSession
     {
+        public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
         public Location CurrentLocation { get; set; }
 
@@ -28,6 +29,8 @@ namespace Engine.ViewModels
             CurrentLocation.YCoordinate = -1;
             CurrentLocation.Description = "This is your house.";
             CurrentLocation.ImageName = "/Engine;component/Images/Locations/Home.png";
+
+            CurrentWorld = new World();
         }
     }
 }
