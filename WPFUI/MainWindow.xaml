@@ -119,10 +119,18 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="1" Content="North"/>
-                <Button Grid.Row="1" Grid.Column="0" Content="West"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="East"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="South"/>
+                <Button Grid.Row="0" Grid.Column="1" 
+                        Height="25" Width="65" Margin="10" 
+                        Content="North"/>
+                <Button Grid.Row="1" Grid.Column="0" 
+                        Height="25" Width="65" Margin="10" 
+                        Content="West"/>
+                <Button Grid.Row="1" Grid.Column="2" 
+                        Height="25" Width="65" Margin="10" 
+                        Content="East"/>
+                <Button Grid.Row="2" Grid.Column="1" 
+                        Height="25" Width="65" Margin="10" 
+                        Content="South"/>
 
             </Grid>
 
