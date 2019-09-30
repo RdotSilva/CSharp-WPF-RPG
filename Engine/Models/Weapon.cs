@@ -12,6 +12,11 @@
                 MinimumDamage = minDamage;
                 MaximumDamage = maxDamage;
             }
+
+            public new Weapon Clone()
+            {
+                return new Weapon(ItemTypeID, Name, Price, MinimumDamage, MaximumDamage);
+            }
         }
 
     }

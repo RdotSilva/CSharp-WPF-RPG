@@ -18,5 +18,7 @@ namespace Engine.Factories
             _standardGameItems.Add(new Weapon.Weapon(1001, "Pointy Stick", 1, 1, 2));
             _standardGameItems.Add(new Weapon.Weapon(1002, "Rusty Sword", 5, 1, 3));
         }
+
+        
     }
 }
