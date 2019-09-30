@@ -62,8 +62,7 @@ namespace Engine.ViewModels
         {
             CurrentPlayer = new Player {Name = "Ryan", CharacterClass = "Fighter", HitPoints = 10, Gold = 100000, ExperiencePoints = 0, Level = 1};
 
-            WorldFactory factory = new WorldFactory();
-            CurrentWorld = factory.CreateWorld();
+            CurrentWorld = WorldFactory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
         }
