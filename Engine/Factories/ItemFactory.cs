@@ -21,7 +21,7 @@ namespace Engine.Factories
 
         public static GameItem CreateGameItem(int itemTypeID)
         {
-            GameItem standardItem = _standardGameItems.FirstOrDefault(item => item.ItemTypeId == itemTypeID);
+            GameItem standardItem = _standardGameItems.FirstOrDefault(item => item.ItemTypeID == itemTypeID);
 
             if (standardItem != null)
             {
