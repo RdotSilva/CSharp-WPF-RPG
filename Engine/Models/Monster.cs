@@ -13,7 +13,7 @@ namespace Engine.Models
 
         public string Name { get; private set; }
         public string ImageName { get; set; }
-        public Int16 MaximumHitPoints { get; private set; }
+        public int MaximumHitPoints { get; private set; }
 
         public int HitPoints
         {
