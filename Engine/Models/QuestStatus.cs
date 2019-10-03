@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    class QuestStatus
+    public class QuestStatus
     {
         public Quest PlayerQuest { get; set; }
         public bool IsCompleted { get; set; }
