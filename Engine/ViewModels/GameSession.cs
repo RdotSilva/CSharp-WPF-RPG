@@ -28,6 +28,18 @@ namespace Engine.ViewModels
                 OnPropertyChanged(nameof(HasLocationToSouth));
 
                 GivePlayerQuestsAtLocation();
+
+            }
+        }
+
+        public Monster CurrentMonster
+        {
+            get { return _currentMonster; }
+            set
+            {
+                _currentMonster = value;
+                OnPropertyChanged(nameof(CurrentMonster));
+                OnPropertyChanged(nameof(HasMonster));
             }
         }
 
@@ -60,6 +72,9 @@ namespace Engine.ViewModels
                 return CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate) != null;
             }
         }
+
+        public bool HasMonster => CurrentMonster != null;
+
         public GameSession()
         {
             CurrentPlayer = new Player {Name = "Ryan", CharacterClass = "Fighter", HitPoints = 10, Gold = 100000, ExperiencePoints = 0, Level = 1};
