@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Engine.EventArgs
 {
-    class GameMessageEventArgs : System.EventArgs
+    public class GameMessageEventArgs : System.EventArgs
     {
         public string Message { get; private set; }
 
