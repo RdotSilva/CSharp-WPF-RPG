@@ -135,5 +135,10 @@ namespace Engine.ViewModels
         {
             CurrentMonster = CurrentLocation.GetMonster();
         }
+
+        private void RaiseMessage(string message)
+        {
+            OnMessageRaised?.Invoke(this, new GameMessageEventArgs(message));
+        }
     }
 }
