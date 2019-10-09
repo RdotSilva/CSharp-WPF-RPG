@@ -55,6 +55,8 @@ namespace Engine.ViewModels
             }
         }
 
+        public Weapon CurrentWeapon { get; set; }
+
         public bool HasLocationToNorth
         {
             get
@@ -90,6 +92,11 @@ namespace Engine.ViewModels
         public GameSession()
         {
             CurrentPlayer = new Player {Name = "Ryan", CharacterClass = "Fighter", HitPoints = 10, Gold = 100000, ExperiencePoints = 0, Level = 1};
+
+            if (!CurrentPlayer.Weapons.Any())
+            {
+                CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(1001));
+            }
 
             CurrentWorld = WorldFactory.CreateWorld();
 
