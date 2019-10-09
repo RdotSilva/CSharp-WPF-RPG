@@ -158,7 +158,7 @@ namespace Engine.ViewModels
                 return;
             }
 
-            // Determine damage to monster
+            // Determine damage to monster.
             int damageToMonster = RandomNumberGenerator.NumberBetween(CurrentWeapon.MinimumDamage, CurrentWeapon.MaximumDamage);
 
             if (damageToMonster == 0)
@@ -170,8 +170,30 @@ namespace Engine.ViewModels
                 CurrentMonster.HitPoints -= damageToMonster;
                 RaiseMessage($"You hit the {CurrentMonster.Name} for {damageToMonster} points.");
             }
+            // If monster if killed, collect rewards and loot.
+            if (CurrentMonster.HitPoints <= 0)
+            {
+                RaiseMessage("");
+                RaiseMessage($"You defeated the {CurrentMonster.Name}!");
 
+                CurrentPlayer.ExperiencePoints += CurrentMonster.RewardExperiencePoints;
+                RaiseMessage($"You receive {CurrentMonster.RewardExperiencePoints} experience points.");
+
+                CurrentPlayer.Gold += CurrentMonster.RewardGold;
+                RaiseMessage($"You receive {CurrentMonster.RewardGold} gold.");
+
+                foreach (ItemQuantity itemQuantity in CurrentMonster.Inventory)
+                {
+                    GameItem item = ItemFactory.CreateGameItem(itemQuantity.ItemID);
+                    CurrentPlayer.AddItemToInventory(item);
+                    RaiseMessage($"You receive {itemQuantity.Quantity} {item.Name}.");
+                }
+
+                // Get another monster to fight
+                GetMonsterAtLocation();
+            }
             
+
         }
 
         private void RaiseMessage(string message)
