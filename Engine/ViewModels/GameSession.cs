@@ -192,7 +192,31 @@ namespace Engine.ViewModels
                 // Get another monster to fight
                 GetMonsterAtLocation();
             }
-            
+            else
+            {
+                // If monster is still alive, let the monster attack
+                int damageToPlayer = RandomNumberGenerator.NumberBetween(CurrentMonster.MinimumDamage, CurrentMonster.MaximumDamage);
+
+                if (damageToPlayer == 0)
+                {
+                    RaiseMessage("The monster attacks, but misses you.");
+                }
+                else
+                {
+                    CurrentPlayer.HitPoints -= damageToPlayer;
+                    RaiseMessage($"The {CurrentMonster.Name} hit you for {damageToPlayer} points.");
+                }
+
+                // If player is killed, move them back to their home.
+                if (CurrentPlayer.HitPoints <= 0)
+                {
+                    RaiseMessage("");
+                    RaiseMessage($"The {CurrentMonster.Name} killed you.");
+
+                    CurrentLocation = CurrentWorld.LocationAt(0, -1); // Player's home
+                    CurrentPlayer.HitPoints = CurrentPlayer.Level * 10; // Completely heal the player
+                }
+            }
 
         }
 
