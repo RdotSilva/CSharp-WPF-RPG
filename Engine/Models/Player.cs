@@ -97,5 +97,11 @@ namespace Engine.Models
             Inventory.Add(item);
             OnPropertyChanged(nameof(Weapons));
         }
+
+        public void RemoveItemFromInventory(GameItem item)
+        {
+            Inventory.Remove(item);
+            OnPropertyChanged(nameof(Weapons));
+        }
     }
 }
