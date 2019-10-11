@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    class Trader : BaseNotificationClass
+    public class Trader : BaseNotificationClass
     {
         public string Name { get; set; }
         public ObservableCollection<GameItem> Inventory { get; set; }
