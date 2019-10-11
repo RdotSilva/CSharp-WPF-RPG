@@ -65,5 +65,36 @@
 
         </DataGrid>
 
+        <DataGrid Grid.Row="2" Grid.Column="1"
+                  Margin="10"
+                  ItemsSource="{Binding CurrentTrader.Inventory}"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  VerticalScrollBarVisibility="Auto">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Description"
+                                    IsReadOnly="True"
+                                    Width="*"
+                                    Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Price"
+                                    IsReadOnly="True"
+                                    Width="Auto"
+                                    Binding="{Binding Path=Price}"/>
+                <DataGridTemplateColumn MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="OnClick_Buy"
+                                    Width="55"
+                                    Content="Buy"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
     </Grid>
 </Window>
