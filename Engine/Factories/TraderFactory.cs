@@ -30,5 +30,15 @@ namespace Engine.Factories
         {
             return _traders.FirstOrDefault(t => t.Name == name);
         }
+
+        private static void AddTraderToList(Trader trader)
+        {
+            if (_traders.Any(t => t.Name == trader.Name))
+            {
+                throw new ArgumentException($"There is already a trained named '{trader.Name}'");
+            }
+
+            _traders.Add(trader);
+        }
     }
 }
