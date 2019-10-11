@@ -96,5 +96,11 @@
 
         </DataGrid>
 
+        <Button Grid.Row="3" Grid.Column="1"
+                HorizontalAlignment="Right"
+                Width="75"
+                Content="Close"
+                Click="OnClick_Close"/>
+
     </Grid>
 </Window>
