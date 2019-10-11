@@ -11,5 +11,11 @@ namespace Engine.Models
     {
         public string Name { get; set; }
         public ObservableCollection<GameItem> Inventory { get; set; }
+
+        public Trader(string name)
+        {
+            Name = name;
+            Inventory = new ObservableCollection<GameItem>();
+        }
     }
 }
