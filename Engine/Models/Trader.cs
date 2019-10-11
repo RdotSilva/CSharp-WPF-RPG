@@ -17,5 +17,9 @@ namespace Engine.Models
             Name = name;
             Inventory = new ObservableCollection<GameItem>();
         }
+        public void AddItemToInventory(GameItem item)
+        {
+            Inventory.Add(item);
+        }
     }
 }
