@@ -21,5 +21,9 @@ namespace Engine.Models
         {
             Inventory.Add(item);
         }
+        public void RemoveItemFromInventory(GameItem item)
+        {
+            Inventory.Remove(item);
+        }
     }
 }
