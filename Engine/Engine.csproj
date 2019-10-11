@@ -55,6 +55,7 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\QuestStatus.cs" />
+    <Compile Include="Models\Trader.cs" />
     <Compile Include="Models\Weapon.cs" />
     <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
