@@ -25,5 +25,10 @@ namespace Engine.Factories
             AddTraderToList(farmerTed);
             AddTraderToList(peteTheHerbalist);
         }
+
+        public static Trader GetTraderByName(string name)
+        {
+            return _traders.FirstOrDefault(t => t.Name == name);
+        }
     }
 }
