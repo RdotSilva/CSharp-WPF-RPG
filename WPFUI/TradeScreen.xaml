@@ -22,5 +22,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Label Grid.Row="0" Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               Content="{Binding CurrentTrader.Name}"/>
+
+        <Label Grid.Row="1" Grid.Column="0"
+               HorizontalAlignment="Center"
+               Content="Your Inventory"/>
+        <Label Grid.Row="1" Grid.Column="1"
+               HorizontalAlignment="Center"
+               Content="Trader's Inventory"/>
+
     </Grid>
 </Window>
