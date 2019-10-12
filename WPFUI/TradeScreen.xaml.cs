@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Engine.Models;
+using Engine.ViewModels;
 
 namespace WPFUI
 {
@@ -19,9 +21,12 @@ namespace WPFUI
     /// </summary>
     public partial class TradeScreen : Window
     {
+        public GameSession Session => DataContext as GameSession;
+
         public TradeScreen()
         {
             InitializeComponent();
         }
+
     }
 }
