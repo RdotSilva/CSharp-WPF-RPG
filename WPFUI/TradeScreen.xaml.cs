@@ -28,5 +28,17 @@ namespace WPFUI
             InitializeComponent();
         }
 
+        private void OnClick_Sell(object sender, RoutedEventArgs e)
+        {
+            GameItem item = ((FrameworkElement)sender).DataContext as GameItem;
+
+            if (item != null)
+            {
+                Session.CurrentPlayer.Gold += item.Price;
+                Session.CurrentTrader.AddItemToInventory(item);
+                Session.CurrentPlayer.RemoveItemFromInventory(item);
+            }
+        }
+
     }
 }
