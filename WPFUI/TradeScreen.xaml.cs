@@ -27,6 +27,7 @@ namespace WPFUI
         {
             InitializeComponent();
         }
+
         private void OnClick_Sell(object sender, RoutedEventArgs e)
         {
             GameItem item = ((FrameworkElement)sender).DataContext as GameItem;
@@ -38,6 +39,7 @@ namespace WPFUI
                 Session.CurrentPlayer.RemoveItemFromInventory(item);
             }
         }
+
         private void OnClick_Buy(object sender, RoutedEventArgs e)
         {
             GameItem item = ((FrameworkElement)sender).DataContext as GameItem;
@@ -56,7 +58,10 @@ namespace WPFUI
                 }
             }
         }
+        private void OnClick_Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
 
-        
     }
 }
