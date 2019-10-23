@@ -63,5 +63,19 @@ namespace Engine.Models
         {
             Inventory = new ObservableCollection<GameItem>();
         }
+        public void AddItemToInventory(GameItem item)
+        {
+            Inventory.Add(item);
+
+            OnPropertyChanged(nameof(Weapons));
+        }
+
+        public void RemoveItemFromInventory(GameItem item)
+        {
+            Inventory.Remove(item);
+
+            OnPropertyChanged(nameof(Weapons));
+        }
     }
+}
 }
